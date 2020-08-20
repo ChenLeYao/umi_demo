@@ -13,11 +13,7 @@ export default defineConfig({
     },
     { path : '/user' ,
       component : '@/pages/user/user' ,
-      exact : true ,
-      routes: [
-        { path: '/user/list', component: '@/pages/user/list' , exact : true ,  },
-        // { path: '/user/admin', component: '@/pages/user/admin' },
-      ]
+      exact : true
     }
   ]
 });
