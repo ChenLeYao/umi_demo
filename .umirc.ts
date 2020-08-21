@@ -4,18 +4,17 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  layout:{},
-  routes : [
-    { path : '/' , component : '@/pages/index/index' , exact : true ,
+
+  routes: [
+    { path: '/index', component: '@/pages/index/index' },
+    {
+      path: '/',
+      component: '@/layouts/index',
       routes: [
-        { path: '/main', component: '@/pages/index/main' , exact : true }
-      ]
+        { path: '/commonProduct', component: '@/pages/product/commonProduct' },
+      ],
     },
-    { path : '/user' ,
-      component : '@/pages/user/user' ,
-      exact : true
-    }
-  ]
+  ],
 });
 // export default {
 //     base : '/build/' ,
