@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'umi';
-import { Menu, Layout } from 'antd';
+import { Menu, Layout, PageHeader } from 'antd';
+import 'antd/dist/antd.css';
 const { SubMenu } = Menu;
 const { Sider, Header, Content, Footer } = Layout;
-import { PageHeader } from 'antd';
-import 'antd/dist/antd.css';
-console.log('enter');
-const asizeData = [
+const asideData = [
   {
     title: '订单管理',
     childNode: [
@@ -73,17 +71,17 @@ const asizeData = [
   },
 ];
 
-function LayOutNav(props: any) {
+function LayOutNav(props) {
   const [navactive, useNavactive] = useState(0);
-  const changeActive = (index: number) => {
+  const changeActive = index => {
     useNavactive(index);
   };
   return (
     <Menu mode="inline">
-      {props.data.map((data: any, index: number) => {
+      {props.data.map((data, index) => {
         return (
           <SubMenu title={data.title}>
-            {data.childNode.map((_d: any) => {
+            {data.childNode.map(_d => {
               return (
                 <Menu.Item>
                   <Link to={_d.path}>{_d.title}</Link>
@@ -97,19 +95,14 @@ function LayOutNav(props: any) {
   );
 }
 
-// export const layout = {
-//   logout: () => {}, // do something
-//   leftRender:()=> { console.log(123); return 23; },// return string || ReactNode;
-// };
-
-export default (props: any) => {
+export default props => {
   return (
     <>
       <Layout>
         <Header>后台管理</Header>
         <Layout>
           <Sider style={{ width: 256 }}>
-            <LayOutNav data={asizeData} />
+            <LayOutNav data={asideData} />
           </Sider>
           <Layout>
             <PageHeader
@@ -117,7 +110,7 @@ export default (props: any) => {
               title="Title"
               subTitle="This is a subtitle"
             />
-            <Content>{props.children}</Content>
+            <Content style={{ padding: '0 10px' }}>{props.children}</Content>
             <Footer>Footer</Footer>
           </Layout>
         </Layout>
