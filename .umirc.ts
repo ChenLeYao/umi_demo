@@ -4,26 +4,23 @@ export default {
   nodeModulesTransform: {
     type: 'none',
   },
-
   routes: [
-    { path: '/index', component: '@/pages/index/index' },
-    { path: '/login', component: '@/pages/index/login' },
+    { path: '/Index', component: '@/pages/index/index' },
+    { path: '/login', component: '@/pages/index/Login' },
     {
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { path: '/commonProduct', component: '@/pages/product/commonProduct' },
-        { path: '/ProductOrder', component: '@/pages/order/productOrder' },
+        {
+          path: '/CommonProduct',
+          component: '@/pages/product/CommonProduct.js',
+        },
+        { path: '/DailyProduct', component: '@/pages/product/DailyProduct' },
+        { path: '/ProductOrder', component: '@/pages/order/ProductOrder' },
+        { path: '/RefundOrder', component: '@/pages/order/RefundOrder' },
+        { path: '/User', component: '@/pages/user/User' },
+        { path: '/VipUser', component: '@/pages/user/VipUser' },
       ],
     },
   ],
 };
-// export default {
-//     base : '/build/' ,
-//     publicPath : '/de/',
-//     hash:true ,
-//     history : {
-//       type : 'hash'
-//     },
-//     layout : {}
-// }

@@ -43,12 +43,12 @@ const asideData = [
       {
         title: '日用品',
         childNode: [],
-        path: '/commonProduct',
+        path: '/DailyProduct',
       },
       {
         title: '护肤品',
         childNode: [],
-        path: '/commonProduct',
+        path: '/CommonProduct',
       },
     ],
     path: '',

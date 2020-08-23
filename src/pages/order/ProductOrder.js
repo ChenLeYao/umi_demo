@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Tag, Button, Modal } from 'antd';
-import order_data from './order.js';
+import order_data from './Order.js';
 
 let order_column = [
   {
